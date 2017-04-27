@@ -14,11 +14,18 @@ public class Prob3 {
 		printCharArray(c);
 	}
 
-	public static void replaceSpace(char c[]) {
-
+	public static void replaceSpace(char c[]) { //공백을 다른 글자로 치환
+			for(int i=0;i<c.length;i++){
+				if(c[i]==' '){
+					c[i]=',';
+				}
+			}
 	}
 
-	public static void printCharArray(char c[]) {
-
+	public static void printCharArray(char c[]) { //출력
+		for(int i=0;i<c.length;i++){
+			System.out.print(c[i]);
+		}
+		System.out.println();
 	}
 }
