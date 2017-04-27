@@ -3,25 +3,25 @@ package tv;
 public class WatchTv {
 	public static void main(String[] args) {
 		TV tv = new TV( 7, 20, false);  	
-		//System.out.println("------- 1번째상태 변화x");
-		tv.status();
-		//System.out.println("------- 2번쨰상태 파워 트루 볼륨 120=볼륨1");
-		tv.power(true);
-		tv.volume(120);
-		tv.status();
-		//System.out.println("------- 3번째상태 볼륨false");
-		tv.volume(false);
-		tv.status();
-		//System.out.println("------- 4번째상태 채널0");
-		tv.channel(0);
-		tv.status();
-		//System.out.println("------- 5번째상태 채널+3");
+		
+		tv.status(); //초기 설정 확인 
+		
+		tv.power(true); //전원을 킨다.
+		tv.volume(120); //볼륨이 120으로 변경하면 볼륨은 1로 변경
+		tv.status(); //상태 확인
+		
+		tv.volume(false); //볼륨을 -1
+		tv.status(); //상태 확인
+		
+		tv.channel(0); //채널을 0으로 바꾼다. = 255로 변환
+		tv.status(); //상태확인
+		
+		tv.channel(true); //채널을 1씩 증가
 		tv.channel(true);
 		tv.channel(true);
-		tv.channel(true);
-		tv.status();
-		//System.out.println("------- 5번째상태 파워 오프");
-		tv.power(false);
-		tv.status();
+		tv.status(); //상태 확인
+		
+		tv.power(false); //전원을 끈다.
+		tv.status(); //상태확인
     }
 }

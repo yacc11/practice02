@@ -11,7 +11,7 @@ public class TV {
 		volume=j;
 		power=b;
 	}
-	public int getChannel() { //범위 계산
+	public int getChannel() { // 채널은 1~255까지 진행 1보다 아래면 255로 바뀌고 255보다 크면 1로 바뀜
 		if(channel>255){
 			channel=1;
 		}
@@ -20,7 +20,7 @@ public class TV {
 		}
 		return channel;
 	}
-	public int getVolume() { //
+	public int getVolume() { // 유효범위 1~100 100이상이면 1로 바뀌고 1이하면 100으로 바뀜
 		if(volume>100){
 			volume=1;
 		}
@@ -29,15 +29,15 @@ public class TV {
 		}
 		return volume;
 	}
-	public boolean isPower() {
+	public boolean isPower() { //전원 on/off
 		return power;
 	}
-	public void status() {
+	public void status() { //현재 상태 확인 
 		System.out.println("channel : "+channel);
 		System.out.println("volume : "+volume);
 		System.out.println("power : "+power);
 	}
-	public void power(boolean b) {
+	public void power(boolean b) { //전원 변경 
 		power=b;
 		if(power==true){
 			isPower();
@@ -48,11 +48,11 @@ public class TV {
 			power=false;
 		}
 	}
-	public void volume(int i) {
+	public void volume(int i) { //유효범위 계산은 게터에서 진행 
 		volume=i;
 		getVolume();
 	}
-	public void volume(boolean i){
+	public void volume(boolean i){ //참이면 +1 ,거짓이면 -1
 		boolean temp=i;
 		if(temp==true){
 			getVolume();
@@ -63,20 +63,11 @@ public class TV {
 			volume--;
 		}
 	}
-	public void channel(int i){
+	public void channel(int i){ //유효범위는 게터에서 진행
 		channel=i;
-		
-//		if(channel>255){
-//			channel=1;
-//			getChannel();
-//		}
-//		else if(channel<1){
-//			channel=255;
-//			getChannel();
-//		}
 		getChannel();
 	}
-	public void channel(boolean i){
+	public void channel(boolean i){ //참이면 +1 거짓이면 -1
 		boolean temp = i;
 		if(temp=true){
 			getChannel();
